@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rachel Liaw</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index-style.css">
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="banner-left">
+            <div class="star star1">
+            </div>
+            <div class="wrap-title"><h1>Hi</h1>
+                <h1>There</h1>
+            <h1>I'm</h1>
+            <h1 class="name">Rachel</h1></div>
+            <ul class="slider-dots">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+           
+        </div>
+        <div class="banner-right">
+            <div class="hero-image"></div>
+            <div class="star star2"></div>
+            <div class="moon"></div>
+        </div>
+
+        <ul class="image-wrap">
+            <li class="box box1"><h1>Hi, there</h1></li>
+            <!-- 0~-100vh -->
+            <div class="box box2">
+                <h1>Meditation</h1>    
+                <div class="box2-image">
+                    <a href="./meditation.html">yoyoyo</a>
+                    <img src="./image/meditation.png" alt="meditation">
+                </div></div>
+            <!-- -100vh~-200vh -->
+            <li class="box box3"><h1>Communication</h1></li>
+            <li class="box box4"><h1>Don't Know yet</h1></li>
+        </ul>
+
+    </div>
+
+    
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        
+
+        $('.slider-dots li').first().css('background', '#fff');
+
+        $('.slider-dots li').hover(function () {
+            let index = $(this).index();
+
+            $(this).css('background', '#fff').siblings().css('background', 'black');
+            $('.image-wrap').css('top', -100 * index + 'vh');
+            
+        })
+
+    // cannot get index//   
+    // 想要知道一滑就是一整頁面的寫法
+
+       $(window).scroll(function(){
+            let scrollTop = $(this).scrollTop();
+           let positionBox1=$('.box1').position().top - 500;
+           let positionBox2=$('.box2').position().top - 500;
+           let positionBox3=$('.box3').position().top - 500;
+           let positionBox4=$('.box4').position().top - 500;
+
+        //    console.log(scrollTop, positionBox1, positionBox2, positionBox3, positionBox4);
+           
+
+           if (scrollTop >= positionBox4) {
+            $('.slider-dots li').eq(3).css('background','pink').siblings().css('background', 'black');
+            // $('.image-wrap').css('top', -positionBox4);
+            
+        }
+            else if (scrollTop >= positionBox3) {
+            $('.slider-dots li').eq(2).css('background','pink').siblings().css('background', 'black');
+            // $('.image-wrap').css('top', -positionBox3);
+            
+        }
+
+        else if (scrollTop >= positionBox2) {
+            $('.slider-dots li').eq(1).css('background','pink').siblings().css('background', 'black');
+            // $('.image-wrap').css('top', -positionBox2);
+            
+        }
+
+        else if (scrollTop >= positionBox1) {
+            $('.slider-dots li').eq(0).css('background','pink').siblings().css('background', 'black');
+            // $('.image-wrap').css('top', '0');
+            
+        };
+            
+        })
+
+
+        $(window).scroll(function(){
+        let boxnumber = $('this').index();        
+           console.log(boxnumber);       
+            
+        })
+
+
+
+//         let navTop = $('nav').offset().top;
+
+// $(window).scroll(function () {
+//     let scrollTop = $(this).scrollTop();
+
+
+//     if (scrollTop >= navTop) {
+//         $('nav').addClass('fixed');
+//     }
+//     else {
+//         $('nav').removeClass('fixed');
+//     }
+// })
+  
+        
+    </script>
+
+
+</body>
+</html>
