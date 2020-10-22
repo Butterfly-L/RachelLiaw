@@ -5,6 +5,21 @@ body {
 
 }
 
+h1 {
+    font-size: 5rem;
+    line-height: 6rem;
+    font-weight: 900;
+}
+
+.h2,
+h2 {
+    font-size: 2rem;
+    line-height: 3rem;
+    font-weight: 500;
+
+}
+
+/* ------------------------- */
 .container {
     display: flex;
     position: relative;
@@ -16,7 +31,8 @@ body {
 .banner-left {
     width: 25%;
     height: 100vh;
-    background-color: #ccc;
+    background: url('./image/Rachel.jpg') center no-repeat, black;
+    background-size: cover;
     position: fixed;
     z-index: 1;
 }
@@ -26,38 +42,60 @@ body {
     display: flex;
     flex-direction: column;
     /* align-self: flex-start; */
-    margin-left: 90%;
+    margin-left: 95%;
     margin-top: 10%;
 
 }
 
 .slider-dots li {
-    width: 20px;
-    height: 20px;
-    margin-right: 20px;
+    /* width: 10px;
+    height: 10px;
+    margin-right: 10px;
     margin-top: 10px;
     background: #000;
-    border-radius: 50%;
+    border-radius: 50%; */
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 16px solid black;
+    margin-top: 8px;
+    background-color: black;
 
 }
 
-h1 {
+.banner-left h1 {
     font-size: 5rem;
     text-align: right;
     line-height: 6rem;
     font-weight: 900;
+    /* text-shadow: 3px 3px black; */
+    color: dimgray;
+    line-height: 7rem;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: gold;
+    letter-spacing: .2rem;
+
 }
 
-.name {
-    color: transparent;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: red;
+
+/* .name { */
+/* -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: gold;
+    text-shadow: 3px 3px transparent; */
+/* text-shadow: 3px 3px pink; */
 }
 
 .wrap-title {
-    padding-top: 200px;
-    padding-right: 20px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-right: 10px;
+
+    /* flex-wrap: wrap; */
+
 }
+
 
 .menu-icon {
     position: absolute;
@@ -135,13 +173,15 @@ h1 {
 .banner-right {
     width: 75%;
     height: 100vh;
-    background: url('./image/index-img-1.png') center repeat;
+    background: url("./image/index-img-5.png") center repeat, black;
     background-size: contain;
     background-size: 100%;
     position: fixed;
     right: 0;
     z-index: 1;
     transition: .5s;
+    display: flex;
+    justify-content: center;
 
 
 }
@@ -221,32 +261,148 @@ h1 {
     border: 1px red solid;
 }
 
+.to-med {
+    position: relative;
+    width: 1px;
+    height: 1px;
+    /* 對其用比它撐開 */
+    display: none;
+    transition: .5s;
+}
+
 .to-med::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 50%;
-    height: 500px;
-    border-left: dotted 10px white;
+    left: 0;
+    height: 30vh;
+    border-left: dotted 10px yellow;
     z-index: 1;
+    transition: .5;
 }
 
 .to-med::after {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 45%;
-    /* translate: (-50%, -50%); */
+    top: 30vh;
+    left: -50px;
+    /* before 再減3% */
     width: 100px;
     height: 100px;
     border-radius: 50%;
     cursor: pointer;
-    background: url('./image/meditation.png') center no-repeat;
     background-size: contain;
-    background-color: pink;
+    background-color: black;
+    border: 5px solid yellow;
     z-index: 1;
+    transition: .5;
+}
+
+.tik {
+    position: absolute;
+    background-color: #fff;
+    top: calc(30vh + 20px);
+    z-index: 2;
+    left: 48%;
+    height: 38px;
+    width: 4px;
+    border-radius: 5px;
+    -webkit-transform-origin: 50% 97%;
+    transform-origin: 50% 97%;
+    -webkit-animation: grdAiguille 2s linear infinite;
+    animation: grdAiguille 2s linear infinite;
+}
+
+@keyframes grdAiguille {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ---Resume---- */
+.resume {
+    width: 70%;
+    color: #eee8aa;
+    margin-top: 10vh;
+}
+
+.divider {
+    border-bottom: 1px solid palegoldenrod;
+    width: 80%;
 
 }
+
+.divider h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 2px;
+}
+
+
+.intro {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.intro-points {
+    /* display: none; */
+    transition: .5s;
+}
+
+.skill-title {
+    width: 100%;
+    font-size: 1.5rem;
+    height: 1.5rem;
+    transition: .5s;
+}
+
+.lan-wrap,
+.skill-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    height: 20vh;
+    width: 100%;
+}
+
+.points {
+    transform: scale(1);
+}
+
+
+.web-design {
+    height: 30vh;
+}
+
+.h3 {
+    fill: palegoldenrod;
+    font-size: 1.2rem;
+    opacity: .8;
+}
+
+
+.circle {
+    stroke-width: 3px;
+    stroke: gold;
+    fill: rgb(2, 2, 116);
+    animation: circle--animation 2s linear backwards;
+}
+
+@keyframes circle--animation {
+    0% {
+        stroke-dashoffset: 340px;
+    }
+
+    100% {
+        stroke-dashoffset: 0px;
+    }
+}
+
 
 
 
@@ -254,7 +410,8 @@ h1 {
 
 .box1 {
 
-    background: brown;
+    background: palegoldenrod;
+    color: white;
     background-size: contain;
 }
 

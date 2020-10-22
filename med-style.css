@@ -72,8 +72,6 @@
     height: 30%;
     border-radius: 5px;
     position: relative;
-    overflow: hidden;
-
 }
 
 /* ----以下會損耗記憶體--- */
@@ -227,6 +225,7 @@
     height: 0px;
     position: absolute;
     border-bottom: 5vw solid rgba(26, 35, 113);
+    background-color: transparent;
     border-left: 100vw solid transparent;
     top: -5vw;
     left: 0;
@@ -259,6 +258,7 @@
     animation: floating ease-in-out infinite;
     animation-duration: 10s;
     animation-direction: alternate;
+    background-color: transparent;
     /* align with triangle */
 }
 
