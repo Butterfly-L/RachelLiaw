@@ -59,9 +59,26 @@ h1 {
     padding-right: 20px;
 }
 
+.menu-icon {
+    position: absolute;
+    width: 3rem;
+    height: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: black;
+    box-shadow: 0 12px black, 0 24px black;
+    top: 50px;
+    left: 25px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+
 .star {
     position: absolute;
+
 }
+
+
 
 .star1 {
     left: 50px;
@@ -71,6 +88,8 @@ h1 {
 
 }
 
+
+
 .star::before {
     content: '';
     position: absolute;
@@ -79,6 +98,7 @@ h1 {
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
     border-bottom: 100px solid yellow;
+    cursor: pointer;
 }
 
 .star::after {
@@ -91,6 +111,7 @@ h1 {
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
     border-top: 100px solid yellow;
+    cursor: pointer;
 }
 
 
@@ -114,11 +135,13 @@ h1 {
 .banner-right {
     width: 75%;
     height: 100vh;
-    background: url("./image/index-image.png") no-repeat center;
+    background: url('./image/index-img-1.png') center repeat;
+    background-size: contain;
     background-size: 100%;
     position: fixed;
     right: 0;
     z-index: 1;
+    transition: .5s;
 
 
 }
@@ -169,6 +192,8 @@ h1 {
     }
 }
 
+/* ---Main Content--- */
+
 .image-wrap {
     display: flex;
     height: 400vh;
@@ -196,8 +221,41 @@ h1 {
     border: 1px red solid;
 }
 
+.to-med::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 500px;
+    border-left: dotted 10px white;
+    z-index: 1;
+}
+
+.to-med::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    /* translate: (-50%, -50%); */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: url('./image/meditation.png') center no-repeat;
+    background-size: contain;
+    background-color: pink;
+    z-index: 1;
+
+}
+
+
+
+/* ---Box 1---- */
+
 .box1 {
-    background-color: wheat;
+
+    background: brown;
+    background-size: contain;
 }
 
 /* test */
@@ -210,7 +268,9 @@ h1 {
 
 /* --------------BOX 2---------------- */
 .box2 {
-    background-color: tomato;
+    background-color: wheat;
+
+    background-size: contain;
 }
 
 .box2 img {
@@ -223,9 +283,80 @@ h1 {
 /* --------------BOX 3---------------- */
 
 .box3 {
-    background-color: teal;
+    background-color: wheat;
+
+    background-size: contain;
 }
 
 .box4 {
-    background-color: purple;
+    background-color: wheat;
+
+    background-size: contain;
+}
+
+.box5 {
+    background-color: wheat;
+
+    background-size: contain;
+}
+
+
+
+
+
+
+/* -------Menu--------- */
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
 }
