@@ -13,9 +13,9 @@
 </head>
 
 <body>
-<!------- Nav bar --------->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="navnav">
-        <div class="container d-flex align-content-end">
+<!------- Nav bar 問老師 navbar中間斷點無法滿版--------->
+    <nav class="navbar navbar-expand-fluid navbar-dark fixed-top bg-dark" id="navnav">
+        <div class="container-fluid d-flex align-content-end">
             <a class="navbar-brand" href="#"><img src="./image/logo-white.png" width="30" height="30" alt="" loading="lazy"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,10 +44,10 @@
         <div class="row animation">
 <!-- -------SKY -->
             <div class="sky d-flex justify-content-center align-items-center position-relative">                
-                <div class="col-lg-8 mt-5">
-                    <h1 class="display-1" style="letter-spacing: 3rem; font-weight: 500;">呼吸</h1>
+                <div class="col-lg-8 col-md-12 mt-5">
+                    <h1 class="display-1 position-relative breath-1" style="letter-spacing: 3rem; font-weight: 500;">呼吸</h1>
 
-                    <h1 class="display-2">讓世界暫停一下</h1>
+                    <h1 class="display-2 breath-2">讓世界暫停一下</h1>
                     <button onclick="togglePlay()" type="button" class="btn btn-dark btn-lg mt-2 play-ani" style="letter-spacing: 0.5rem">開始冥想</button>
                 </div>
             </div>
@@ -72,14 +72,14 @@
                 <h1>常常要被自己的壞情緒淹沒...</h1>
             </div>
             <div class="tri-below"></div>  
-            <ul class="col-lg-12 d-flex justify-content-center">
-                <li class="col-3 text-center d-flex flex-wrap justify-content-center" style="top: -30%">
+            <ul class="col-lg-12 d-flex justify-content-center anxiety">
+                <li class="col-lg-3 col-md-12 text-center d-flex flex-wrap justify-content-center" style="top: -30%">
                     <div><h2 style="letter-spacing: 0.5rem;">焦慮</h2><p style="font-size:1.2rem; margin-top: 20px">要是我搞砸了怎麼辦？</p></div>
                 </li>
-                <li class="col-3 text-center d-flex flex-wrap justify-content-center" style="top: 30%">
+                <li class="col-lg-3 col-md-12 text-center d-flex flex-wrap justify-content-center" style="top: 30%">
                     <div><h2 style="letter-spacing: 0.5rem;">絕望</h2><p style="font-size:1.2rem; margin-top: 20px">每天都好想哭笑不出來...</p></div>
                 </li>
-                <li class="col-3 text-center d-flex flex-wrap justify-content-center" style="top: -30%">
+                <li class="col-lg-3 col-md-12 text-center d-flex flex-wrap justify-content-center" style="top: -30%">
                     <div><h2 style="letter-spacing: 0.5rem;">憤怒</h2><p style="font-size:1.2rem; margin-top: 20px">為什麼他們要這樣對我！？</p></div>
                 </li>
                 
@@ -93,21 +93,19 @@
     <!-- End of Container -->
     </div>
 
-    <div class="container-fluid main">      
+    <div class="container-fluid main choose-place">      
         <div class="row position-relative">
-            <!-- <div class="col-12 d-flex flex-row-reverse mt-5 main-title">
-                <h1 class="display-1">嘿！</h1>
-            </div> -->
-            <div class="position-absolute" style="top:-5%; right: 0%";>
+            <div class="position-absolute place-title-1" style="top:-5%; right: 0%";>
                 <h1 class="display-1">嘿！</h1>
             </div>
-            <div class="col-12 d-flex flex-row-reverse" style="margin-top:10%;">
+            <div class="col-12 d-flex flex-row-reverse place-title-2" style="margin-top:10%;">
                 <h1>讓我們一起逃跑吧！</h1>
             </div> 
  <!-- 選場景囉 -->
-            <div class="img-container position-relative mx-5">
-                <div class="card-wrap mt-5 position-absolute d-flex" style="width: 200vw; left: 200px;">               
-                    <a href="#" class="card mx-5 card-1" style="width: 50%;">
+ <!-- /* 為什麼大小寫死了還會跑 */ -->
+            <div class="img-container position-relative">
+                <div class="card-wrap mt-5 position-absolute d-flex" style="left: 200px;">               
+                    <a href="#" class="card mx-5 card-1" style="width: 600px;">
                         <div class="card-img">
                             <img src="./image/med-place-sea2.jpg" class="card-img-top" alt="...">
                         </div>
@@ -115,7 +113,7 @@
                             <h5 class="card-title">把傷心藏到海裡</h5> 
                             </div>
                     </a>
-                    <a href="#" class="card  mx-5 card-2" style="width: 50%;">
+                    <a href="#" class="card  mx-5 card-2" style="width: 600px;">
                         <div class="card-img">
                             <img src="./image/med-place-rain.jpg" class="card-img-top" alt="...">
                         </div>
@@ -126,7 +124,7 @@
                         </div>
                     </a>
 
-                    <a href="#" class="card  mx-5 card-3" style="width: 50%;">
+                    <a href="#" class="card  mx-5 card-3" style="width: 600px;">
                         <div class="card-img">
                             <img src="./image/md-s2-place-3.jpg" class="card-img-top" alt="...">
                         </div>
@@ -137,7 +135,7 @@
                         </div>
                     </a>
 
-                    <a href="#" class="card mx-5 card-1" style="width: 50% ">
+                    <a href="#" class="card mx-5 card-1" style="width: 600px">
                         <div class="card-img">
                             <img src="./image/md-s2-place-1.jpeg" class="card-img-top" alt="...">
                         </div>
@@ -145,7 +143,7 @@
                             <h5 class="card-title">消失在宇宙中</h5> 
                             </div>
                         </a>
-                    <a href="#" class="card  mx-5 card-2" style="width: 50%;">
+                    <a href="#" class="card  mx-5 card-2" style="width: 600px;">
                         <div class="card-img">
                             <img src="./image/med-place-wind.jpg" class="card-img-top" alt="...">
                         </div>
@@ -160,7 +158,7 @@
                 </div>
             </div>
 
-            <ul class="col-12 dots-wrap d-flex justify-content-center">
+            <ul class="col-12 dots-wrap d-flex justify-content-center mt-3">
                 <li class="dots"></li>
                 <li class="dots"></li>
                 <li class="dots"></li>
@@ -182,7 +180,7 @@
         <div class="row d-flex story">
             <div class="col-lg-6 box box1 border-0 position-relative"></div>
             <div class="col-lg-4 box box2 border-0 position-relative"></div>
-            <div class="col-2 box box3 border-0 position-relative"></div>
+            <div class="col-lg-2 box box3 border-0 position-relative"></div>
             <div class="col-lg-2 box box4 border-0 position-relative"></div>
             <div class="col-lg-4 box box5 border-0 position-relative"></div>
             <div class="col-lg-3 box box6 border-0 position-relative">
@@ -193,10 +191,10 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid last-sec">
+    <div class="container-fluid last-sec position-relative">
         <div class="row d-flex">
-            <div class="col-lg-3 d-flex position-relative">
-                <div class="footer-text position-absolute d-flex justify-content-center align-items-center">
+            <div class="col-lg-3 col-md-12 d-flex position-relative">
+                <div class="footer-text position-absolute d-flex justify-content-center align-items-center last-text">
                     <div class="col mx-5 ml-5">
                         <h1 class="display-3">讓世界</h1>
                         <h1 class="display-3">暫停一下</h1>
