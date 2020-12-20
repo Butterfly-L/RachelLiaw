@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: #1F271B;
 
 }
 
@@ -10,7 +11,6 @@ h1 {
     line-height: 6rem;
     font-weight: 900;
     letter-spacing: 0.5rem;
-    color: darkblue;
 }
 
 .h2,
@@ -18,7 +18,6 @@ h2 {
     font-size: 2rem;
     line-height: 3rem;
     font-weight: 500;
-    color: darkblue;
 
 }
 
@@ -36,6 +35,7 @@ h2 {
     height: 100vh;
     background: url('./image/Rachel.jpg') center no-repeat, black;
     background-size: cover;
+    transition: 1s;
     position: fixed;
     z-index: 1;
 }
@@ -51,19 +51,14 @@ h2 {
 }
 
 .slider-dots li {
-    /* width: 10px;
-    height: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
-    background: #000;
-    border-radius: 50%; */
+
     width: 0;
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-top: 16px solid black;
+    border-bottom: 16px solid #28AFB0;
     margin-top: 8px;
-    background-color: black;
+    background-color: #28AFB0;
 
 }
 
@@ -73,10 +68,10 @@ h2 {
     line-height: 6rem;
     font-weight: 900;
     /* text-shadow: 3px 3px black; */
-    color: dimgray;
+    color: #19647E;
     line-height: 7rem;
     -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: gold;
+    -webkit-text-stroke-color: #F4D35E;
     letter-spacing: .2rem;
 
 }
@@ -137,7 +132,7 @@ h2 {
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-bottom: 100px solid yellow;
+    border-bottom: 100px solid #F4D35E;
     cursor: pointer;
 }
 
@@ -150,7 +145,7 @@ h2 {
     height: 0;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
-    border-top: 100px solid yellow;
+    border-top: 100px solid #F4D35E;
     cursor: pointer;
 }
 
@@ -175,13 +170,14 @@ h2 {
 .banner-right {
     width: 75%;
     height: 100vh;
-    background: url("./image/index-img-5.png") center repeat, black;
+    background: #1F271B;
+ 
     background-size: contain;
     background-size: 100%;
     position: fixed;
     right: 0;
     z-index: 1;
-    transition: .5s;
+    transition: 1s;
     display: flex;
     justify-content: center;
 
@@ -199,7 +195,7 @@ h2 {
     height: 80px;
     right: 80px;
     border-radius: 100%;
-    box-shadow: 15px 15px 0 0 yellow;
+    box-shadow: 15px 15px 0 0 #F4D35E;
     position: absolute;
     animation: moon 1.5s ease-in-out infinite;
     animation-fill-mode: backwards;
@@ -251,7 +247,7 @@ h2 {
     top: 0;
     left: 0;
     height: 30vh;
-    border-left: dotted 10px yellow;
+    border-left: dotted 10px #F4D35E;
     z-index: 1;
     transition: .5;
 }
@@ -268,7 +264,7 @@ h2 {
     cursor: pointer;
     background-size: contain;
     background-color: black;
-    border: 5px solid yellow;
+    border: 5px solid #F4D35E;
     z-index: 1;
     transition: .5;
 }
@@ -309,24 +305,24 @@ h2 {
 /* ---Resume---- */
 .resume {
     width: 70%;
-    color: #eee8aa;
+
     margin-top: 10vh;
 }
 
 .divider {
-    border-bottom: 1px solid #eee8aa;
+    border-bottom: 1px solid #F4D35E;
     width: 80%;
 
 }
 
 .resume h1 {
-    color: #eee8aa;
+    color: #F4D35E;
 }
 
 .divider h2 {
     margin-top: 1.5rem;
-    margin-bottom: 2px;
-    color: #eee8aa;
+    margin-bottom: 8px;
+    color: #F4D35E;
 }
 
 
@@ -335,6 +331,7 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     line-height: 1.2rem;
+    color: #EE964B;
 
 }
 
@@ -360,30 +357,94 @@ h2 {
 
 .points {
     transform: scale(1);
+    cursor: pointer;
+    transition: transform 0.8s;
 }
+
+
+.points-1 {
+    position: absolute;
+}
+
+.pointer-wrapper {
+    min-width: 200px;
+    height: 200px;
+    perspective: 1000px;
+
+}
+
+.point-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.pointer-wrapper:hover .point-wrap {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+
 
 
 .web-design {
     height: 30vh;
 }
 
+
+.intro-for-mobile{
+    display: none;
+}
+
+/* Points */
+
 .h3 {
-    fill: palegoldenrod;
+    fill: #F4D35E;
     font-size: 1.2rem;
     opacity: .8;
 }
 
 
 .circle {
-    stroke-width: 3px;
-    stroke: gold;
-    fill: rgb(2, 2, 116);
+    stroke-width: 5px;
+    stroke: #F4D35E;
+    fill: #19647E;
     animation: circle--animation 2s linear backwards;
+}
+
+
+.circle-back {
+    stroke-width: 5px;
+    stroke: #19647E;
+    fill: #28AFB0;
+
+}
+
+.h3-back {
+    color: #19647E;
+    font-size: 1.2rem;
+    opacity: .8;
+    font-weight: 500;
 }
 
 @keyframes circle--animation {
     0% {
-        stroke-dashoffset: 340px;
+        stroke-dashoffset: 400px;
     }
 
     100% {
@@ -399,17 +460,15 @@ h2 {
 
 .image-wrap {
     display: flex;
-    height: 400vh;
     width: 100vw;
     position: absolute;
     flex-wrap: wrap;
     justify-content: flex-end;
     transition: 0.5s;
-    top: 0;
+    top: 0px;
 }
 
 .box {
-    width: 75%;
     height: 100vh;
     /* align with banner-right */
     display: flex;
@@ -417,29 +476,92 @@ h2 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: blanchedalmond;
+    background: #1F271B;
     /* 要讓文字貼在下面 */
 }
 
-.box span {
-    width: 100%;
-    border: 1px red solid;
+.box1,
+.box2{
+    width: 75%;
 }
+
+
+.box3{
+    width: 83%;
+}
+
+.box4{
+    width: 91%;
+}
+
+.box5{
+    width: 100%;
+} */
+
 
 
 .box1 {
-    background-color: blanchedalmond;
+    background-color: #1F271B;
+
 }
 
-/* test */
-.fixed {
-    position: fixed;
-    top: 0;
+.box3 {
+    background: url(./image/index-box2-img.jpg);
+    background-size: cover;
+    color: white;
+    background-attachment: fixed;
+
+}
+
+.box2{
+    opacity: .5;
+}
+
+.box2 h1,
+.box3 h1,
+.box4 h1,
+.box5 h1 {
+    font-size: 10rem;
+    color: white;
+}
+
+
+
+.box5 h1 {
+    color: white;
+    z-index: 1;
+}
+
+.box4,
+.box5 {
+    opacity: .5;
+}
+
+#myVideo {
     left: 0;
-    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 1;
+    transition: .8s;
 }
 
-/* --------------BOX 2---------------- */
+
+#myVideo2 {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    object-fit: cover;
+    z-index: 0;
+    opacity: .6;
+    display: none;
+    transition: .8s;
+} 
 
 
 /* -------Menu--------- */
@@ -469,14 +591,14 @@ h2 {
     padding: 8px;
     text-decoration: none;
     font-size: 36px;
-    color: #818181;
+    color: #19647E;
     display: block;
     transition: 0.3s;
 }
 
 .overlay a:hover,
 .overlay a:focus {
-    color: #f1f1f1;
+    color: #F4D35E;
 }
 
 .overlay .closebtn {
@@ -510,23 +632,46 @@ h2 {
 
 }
 
-
-@media screen and (max-height: 450px) {
-    .overlay a {
-        font-size: 20px
-    }
-
-    .overlay .closebtn {
-        font-size: 40px;
-        top: 15px;
-        right: 35px;
-    }
+.nav-icon-img {
+    transition: .3s;
 }
 
 
+
+.small-ball{
+    border-radius: 50%;
+    color: wheat;
+}
+
+.ball1{
+    width: 30%;
+    height: 30%;
+    z-index: 5;
+
+}
+
+.ball2{
+    width: 60%;
+    height: 60%;
+    z-index: 5;
+
+}
+
+.ball3{
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+
+}
+
+
+
+/* ---Mobile---------------------------  */
 /* ---Mobile  */
 /* ---Mobile  */
-/* ---Mobile  */
+
+
+
 @media screen and (max-width: 768px) {
     h1 {
         font-size: 2rem;
@@ -534,8 +679,9 @@ h2 {
     }
 
     h2 {
-        font-size: 1rem;
+        font-size: 1.5rem;
         line-height: 1rem;
+        margin-bottom: 5px;
     }
 
     .container {
@@ -545,8 +691,8 @@ h2 {
 
     .banner-left {
         width: 100%;
-        height: 150px;
-        background: dimgray;
+        height: 100px;
+        background: #19647E;
         /* background: url('./image/Rachel.jpg') center no-repeat, black; */
         position: fixed;
         z-index: 2;
@@ -562,10 +708,36 @@ h2 {
         display: none;
     }
 
-    .star1 {
-        left: 0px;
-        top: -50px;
+    .star1{
+        left: 0;
+
     }
+
+    .intro-for-desktop{
+        display:none
+    }
+
+    .intro-for-mobile{
+        display:none
+    }
+            
+
+
+    @keyframes star1 {
+        0% {
+            top: 0px;
+        }
+    
+        50% {
+            top: 10px;
+        }
+    
+        100% {
+            top: 0px;
+        }
+    }
+
+
 
 
     .wrap-title {
@@ -574,6 +746,7 @@ h2 {
         flex-direction: row-reverse;
         flex-wrap: wrap;
         align-content: center;
+        display: none;
     }
 
     .wrap-title h1 {
@@ -590,8 +763,10 @@ h2 {
 
     .banner-right {
         width: 100%;
-        /* height: 70%; */
-        margin-top: 150px;
+        margin-top: 100px;
+        background-color: #1F271B;
+        position: relative;
+
 
     }
 
@@ -604,9 +779,17 @@ h2 {
         transform: scale(1);
     }
 
+
     .skill-wrap {
         flex-wrap: wrap;
     }
+
+    .pointer-wrapper{
+        height: 40px;
+        margin-top: 10px;
+    }
+
+
 
     .box {
         width: 100%;
@@ -615,9 +798,40 @@ h2 {
 
     .star2 {
         height: 100px;
+        display: none;
+    }
+
+    .moon{
+display: none;
+    }
+
+    .intro-for-mobile{
+        display: show;
+    }
+
+    .intro-for-desktop{
+        display: none;
+    }
+
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;}
+
+    .nav-icon{
+        flex-wrap: wrap;
     }
 
 
+
+
+    .nav-icon span{
+        width: 80%;
+    }
 
 
 }

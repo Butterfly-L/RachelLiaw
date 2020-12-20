@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meditation</title>
     <link rel="stylesheet" href="med-style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="shortcut icon" href="./image/logo-black.png" type="image/x-icon">
+
+    
 
 </head>
 
 <body>
-<!------- Nav bar 問老師 navbar中間斷點無法滿版--------->
-    <nav class="navbar navbar-expand-fluid navbar-dark fixed-top bg-dark" id="navnav">
+<!------- Nav bar--------->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="navnav">
         <div class="container-fluid d-flex align-content-end">
             <a class="navbar-brand" href="#"><img src="./image/logo-white.png" width="30" height="30" alt="" loading="lazy"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -24,7 +26,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="./index.html"> Go back to Rachel <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="./index.html">Meditation<span class="sr-only">(current)</span></a>
                     </li>
 
                 </ul>
@@ -33,8 +35,13 @@
         </div>
     </nav>
 <!--------- Audio --------->
-    <audio id="myAudio" controls loop>
+    <audio id="myAudio" loop>
         <source src="./image/water_ocean_waves_rocks_light_001.mp3" type="audio/mpeg">
+
+      </audio>
+
+      <audio id="myAudio2" loop>
+        <source src="./image/zapsplat_nature_thunderstorm_aftermath_light_rain_drips_distant_rumbles_thunder_56659.mp3" type="audio/mpeg">
 
       </audio>
 
@@ -48,173 +55,235 @@
                     <h1 class="display-1 position-relative breath-1" style="letter-spacing: 3rem; font-weight: 500;">呼吸</h1>
 
                     <h1 class="display-2 breath-2">讓世界暫停一下</h1>
-                    <button onclick="togglePlay()" type="button" class="btn btn-dark btn-lg mt-2 play-ani" style="letter-spacing: 0.5rem">開始冥想</button>
+                    <button onclick="" type="button" class="btn btn-dark btn-lg mt-2 play-ani" style="letter-spacing: 0.5rem" data-toggle="modal" data-target="#exampleModalCenter">開始冥想</button>
                 </div>
             </div>
+<!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+            <!------- modal-header ------->
+                    <div class="modal-header w-100 d-flex justify-content-center">
+                        <button type="button" class="close close-customize" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 43 43">
+                            <g id="close-outline" transform="translate(-2.25 -2.25)">
+                              <path id="Path_20" data-name="Path 20" d="M23.75,2.25a21.368,21.368,0,0,0-21.5,21.5,21.368,21.368,0,0,0,21.5,21.5,21.368,21.368,0,0,0,21.5-21.5A21.368,21.368,0,0,0,23.75,2.25Zm0,39.929A18.429,18.429,0,1,1,42.179,23.75,18.483,18.483,0,0,1,23.75,42.179Z" transform="translate(0 0)" fill="#3a97a0"/>
+                              <path id="Path_21" data-name="Path 21" d="M29.168,31.625l-8.293-8.293-8.293,8.293-2.457-2.457,8.293-8.293-8.293-8.293,2.457-2.457,8.293,8.293,8.293-8.293,2.457,2.457-8.293,8.293,8.293,8.293Z" transform="translate(2.875 2.875)" fill="#3a97a0"/>
+                            </g>
+                          </svg>
+                          </span>
+                    </button>
+                    </div>
+                    <div class="modal-body w-100 d-flex justify-content-center flex-column" id="clockdiv">
+                        <div class="modal-img"></div>
+
+                        <h2 class="modal-title mt-5" id="exampleModalLongTitle">把傷心藏到海裡</h2>
+            <!-- Form Start: select Time -->
+                        <form action="" name="choose_time" id="choose_time">
+                            <div class="btn-wrapper d-flex justify-content-center w-100 mt-5">
+                                <button type="button" class="select-min mx-2" value="5" onclick="$('#choose_time').val(5)">
+                                    <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39">
+                                        <path id="time" d="M18,0A18,18,0,1,0,30.728,5.271,17.941,17.941,0,0,0,18,0Zm0,4.7A13.3,13.3,0,1,1,8.6,8.595,13.26,13.26,0,0,1,18,4.7ZM16.159,7.723v8.409H11.5v4.6h9.263V7.723Z" transform="matrix(0.996, 0.087, -0.087, 0.996, 3.137, 0)" fill="#3a97a0"/>
+                                      </svg>
+                                    <span class="ml-1">5 分鐘</span>
+                                </button>
+                                <button type="button" class="select-min mx-2" value="10" onclick="$('#choose_time').val(10)">
+                                    <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39">
+                                        <path id="time" d="M18,0A18,18,0,1,0,30.728,5.271,17.941,17.941,0,0,0,18,0Zm0,4.7A13.3,13.3,0,1,1,8.6,8.595,13.26,13.26,0,0,1,18,4.7ZM16.159,7.723v8.409H11.5v4.6h9.263V7.723Z" transform="matrix(0.996, 0.087, -0.087, 0.996, 3.137, 0)" fill="#3a97a0"/>
+                                      </svg>
+                                    <span class="ml-1">10 分鐘</span>
+                                </button>
+                                <button type="button" class="select-min mx-2" value="15" onclick="$('#choose_time').val(15)">
+                                    <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39">
+                                        <path id="time" d="M18,0A18,18,0,1,0,30.728,5.271,17.941,17.941,0,0,0,18,0Zm0,4.7A13.3,13.3,0,1,1,8.6,8.595,13.26,13.26,0,0,1,18,4.7ZM16.159,7.723v8.409H11.5v4.6h9.263V7.723Z" transform="matrix(0.996, 0.087, -0.087, 0.996, 3.137, 0)" fill="#3a97a0"/>
+                                      </svg>
+                                    <span class="ml-1">15 分鐘</span>
+                                </button>
+                            </div>
+
+                         <!-- Change Player start or countdown -->
+                         <div class="start-btn d-flex justify-content-center my-3 flex-column">
+                            <span class="alert text-center" style="color:white;"></span>
+                            <div class="w-100 d-flex justify-content-center"><button class="start-med" onclick="processFormData();return false;"><h3 class="mt-1">開始冥想</h3></button></div>
+                             
+
+                        </div>
+
+                         <div class="clockdiv d-flex justify-content-center my-5" id="clockdiv"><h3 class="min"></h3><h3 class="mx-2">:</h3>
+                         <h3 class="sec"></h3></div>
+                        
+                        </form>
+                       
+                        
+                    </div>
+                    
+                </div>
+                </div>
+            </div>
+
+<!-- 動畫 -->
             <div class="sun"></div>
             <div class="sea">
-                <span class="wave"></span>
-                <span class="wave"></span>
-                <span class="wave"></span>
-                <span class="wave"></span>
-                <span class="wave"></span>
-                <span class="wave"></span>
-                <span class="wave"></span>
-                <span class="wave"></span>
-                <span class="wave"></span>
-            </div>
-        </div>
-<!-- Sound from Zapsplat.com -->
-<!-- ---焦慮內容--- -->
-        <div class="row content position-relative">
-            <div class="tri-above"></div>
-            <div class="col-lg-12 title d-flex justify-content-center mt-5">
-                <h1>常常要被自己的壞情緒淹沒...</h1>
-            </div>
-            <div class="tri-below"></div>  
-            <ul class="col-lg-12 d-flex justify-content-center anxiety">
-                <li class="col-lg-3 col-md-12 text-center d-flex flex-wrap justify-content-center" style="top: -30%">
-                    <div><h2 style="letter-spacing: 0.5rem;">焦慮</h2><p style="font-size:1.2rem; margin-top: 20px">要是我搞砸了怎麼辦？</p></div>
-                </li>
-                <li class="col-lg-3 col-md-12 text-center d-flex flex-wrap justify-content-center" style="top: 30%">
-                    <div><h2 style="letter-spacing: 0.5rem;">絕望</h2><p style="font-size:1.2rem; margin-top: 20px">每天都好想哭笑不出來...</p></div>
-                </li>
-                <li class="col-lg-3 col-md-12 text-center d-flex flex-wrap justify-content-center" style="top: -30%">
-                    <div><h2 style="letter-spacing: 0.5rem;">憤怒</h2><p style="font-size:1.2rem; margin-top: 20px">為什麼他們要這樣對我！？</p></div>
-                </li>
-                
+                <span class="wave flow-1"></span>
+                <span class="wave flow-1"></span>
+                <span class="wave flow-1"></span>
                
-            
-            </ul>
-            <div class="col-lg-12 sec2-image position-absolute d-flex justify-content-center">
-                <img src="./image/med-for-help.png" alt="">
-            </div>           
-        </div>
-    <!-- End of Container -->
-    </div>
-
-    <div class="container-fluid main choose-place">      
-        <div class="row position-relative">
-            <div class="position-absolute place-title-1" style="top:-5%; right: 0%";>
-                <h1 class="display-1">嘿！</h1>
             </div>
-            <div class="col-12 d-flex flex-row-reverse place-title-2" style="margin-top:10%;">
-                <h1>讓我們一起逃跑吧！</h1>
-            </div> 
- <!-- 選場景囉 -->
- <!-- /* 為什麼大小寫死了還會跑 */ -->
-            <div class="img-container position-relative">
-                <div class="card-wrap mt-5 position-absolute d-flex" style="left: 200px;">               
-                    <a href="#" class="card mx-5 card-1" style="width: 600px;">
-                        <div class="card-img">
-                            <img src="./image/med-place-sea2.jpg" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">把傷心藏到海裡</h5> 
-                            </div>
-                    </a>
-                    <a href="#" class="card  mx-5 card-2" style="width: 600px;">
-                        <div class="card-img">
-                            <img src="./image/med-place-rain.jpg" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-body">
-                        <h5 class="card-title">讓雨沖刷掉焦慮</h5>
-                    
-                        
-                        </div>
-                    </a>
-
-                    <a href="#" class="card  mx-5 card-3" style="width: 600px;">
-                        <div class="card-img">
-                            <img src="./image/md-s2-place-3.jpg" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-body">
-                        <h5 class="card-title">讓寂寞藏在樹洞裡</h5>
-                        
-                        
-                        </div>
-                    </a>
-
-                    <a href="#" class="card mx-5 card-1" style="width: 600px">
-                        <div class="card-img">
-                            <img src="./image/md-s2-place-1.jpeg" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">消失在宇宙中</h5> 
-                            </div>
-                        </a>
-                    <a href="#" class="card  mx-5 card-2" style="width: 600px;">
-                        <div class="card-img">
-                            <img src="./image/med-place-wind.jpg" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-body">
-                        <h5 class="card-title">讓痛苦隨風逝去</h5>
-                    
-                        
-                        </div>
-                    </a>
-
-                    
-                </div>
-            </div>
-
-            <ul class="col-12 dots-wrap d-flex justify-content-center mt-3">
-                <li class="dots"></li>
-                <li class="dots"></li>
-                <li class="dots"></li>
-                <li class="dots"></li>
-                <li class="dots"></li>
-            </ul>
-            
         </div>
-    </div>
 
-    <!------- How toStory -------->
-    <div class="container-fluid how-to">
-        <div class="row col-12 d-flex justify-content-center">
-            <h1 class="display-3 mt-5">深深地呼吸</h1></div>
-        <div class="row col-12 d-flex justify-content-center">
-            <h1 class="display-3 mb-5">讓自己平靜下來</h1></div>
-            
+<!-- ---焦慮內容--- -->
+<div class="row content position-relative">
+    <div class="tri-above"></div>
+    <div class="col-12 title d-flex justify-content-center mt-5">
+        <h1>常常要被自己的壞情緒淹沒...</h1>
+    </div>
+    <div class="tri-below"></div>  
+    <ul class="col-12 d-flex justify-content-center anxiety">
+        <li class="col-md-3 col-12 text-center d-flex flex-wrap justify-content-center" style="top: -30%">
+            <div><h2 style="letter-spacing: 0.5rem;">焦慮</h2><p style="font-size:1.2rem; margin-top: 20px">要是我搞砸了怎麼辦？</p></div>
+        </li>
+        <li class="col-md-3 col-12 text-center d-flex flex-wrap justify-content-center" style="top: 30%">
+            <div><h2 style="letter-spacing: 0.5rem;">絕望</h2><p style="font-size:1.2rem; margin-top: 20px">每天都好想哭笑不出來...</p></div>
+        </li>
+        <li class="col-md-3 col-12 text-center d-flex flex-wrap justify-content-center" style="top: -30%">
+            <div><h2 style="letter-spacing: 0.5rem;">憤怒</h2><p style="font-size:1.2rem; margin-top: 20px">為什麼他們要這樣對我！？</p></div>
+        </li>
         
-        <div class="row d-flex story">
-            <div class="col-lg-6 box box1 border-0 position-relative"></div>
-            <div class="col-lg-4 box box2 border-0 position-relative"></div>
-            <div class="col-lg-2 box box3 border-0 position-relative"></div>
-            <div class="col-lg-2 box box4 border-0 position-relative"></div>
-            <div class="col-lg-4 box box5 border-0 position-relative"></div>
-            <div class="col-lg-3 box box6 border-0 position-relative">
-                
-            </div>
-            <div class="col-lg-3 box box7 border-0 position-relative d-flex justify-content-center">
-                <div class="box-text"></div>
-            </div>
-        </div>
+       
+    
+    </ul>
+    <div class="col-12 sec2-image position-absolute d-flex justify-content-center">
+        <img src="./image/med-for-help.png" alt="">
+    </div>           
+</div>
+<!-- End of Container -->
+</div>
+
+<!-- 選場景囉 -->
+<!-- <div class="container-fluid main choose-place">      
+<div class="row position-relative">
+    <div class="position-absolute place-title-1" style="top:-5%; right: 0%";>
+        <h1 class="display-1">嘿！</h1>
     </div>
-    <div class="container-fluid last-sec position-relative">
-        <div class="row d-flex">
-            <div class="col-lg-3 col-md-12 d-flex position-relative">
-                <div class="footer-text position-absolute d-flex justify-content-center align-items-center last-text">
-                    <div class="col mx-5 ml-5">
-                        <h1 class="display-3">讓世界</h1>
-                        <h1 class="display-3">暫停一下</h1>
-                        <button onclick="togglePlay()" type="button" class="btn btn-dark btn-lg mt-5" style="letter-spacing: 0.5rem">開始冥想</button>
+    <div class="col-12 d-flex flex-row-reverse place-title-2" style="margin-top:10%;">
+        <h1>讓我們一起逃跑吧！</h1>
+    </div> 
+
+    <div class="img-container position-relative">
+        <div class="card-wrap mt-5 position-absolute d-flex">               
+            <a href="#" class="card mr-5 card-1" style="width: 600px;">
+                <div class="card-img">
+                    <img src="./image/med-place-sea2.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">把傷心藏到海裡</h5> 
                     </div>
+            </a>
+            <a class="card mx-5 card-2" style="width: 600px;" onclick="togglePlay2()">
+                <div class="card-img">
+                    <img src="./image/med-place-rain.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                <h5 class="card-title">讓雨沖刷掉焦慮</h5>
+
+            
                 
                 </div>
+            </a>
+
+            <a href="#" class="card  mx-5 card-3" style="width: 600px;">
+                <div class="card-img">
+                    <img src="./image/md-s2-place-3.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                <h5 class="card-title">讓寂寞藏在樹洞裡</h5>
                 
-            </div>
-            <div class="col-lg-9 d-flex justify-content-center footer-pic ">               
-            </div>
+                
+                </div>
+            </a>
+
+            <a href="#" class="card mx-5 card-1" style="width: 600px">
+                <div class="card-img">
+                    <img src="./image/md-s2-place-1.jpeg" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">消失在宇宙中</h5> 
+                    </div>
+                </a>
+            <a href="#" class="card  mx-5 card-2" style="width: 600px;">
+                <div class="card-img">
+                    <img src="./image/med-place-wind.jpg" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                <h5 class="card-title">讓痛苦隨風逝去</h5>
+            
+                
+                </div>
+            </a>
+
+            
         </div>
     </div>
+
+    <ul class="col-12 dots-wrap d-flex justify-content-center mt-3">
+        <li class="dots"></li>
+        <li class="dots"></li>
+        <li class="dots"></li>
+        <li class="dots"></li>
+        <li class="dots"></li>
+    </ul>
+    
+</div>
+</div> -->
+
+<!------- How toStory -------->
+<div class="container-fluid how-to">
+<div class="row col-12 d-flex justify-content-center">
+    <div style="height:100px; width: 100%;"></div>
+    <h1 class="display-3 mt-5" >透過冥想</h1></div>
+<div class="row col-12 d-flex justify-content-center">
+    <h1 class="display-3 mb-5">讓自己平靜下來</h1></div>
+    
+
+<div class="row d-flex story">
+    <div class="col-lg-6 box box1 border-0 position-relative"></div>
+    <div class="col-lg-4 box box2 border-0 position-relative"></div>
+    <div class="col-lg-2 box box3 border-0 position-relative"></div>
+    <div class="col-lg-2 box box4 border-0 position-relative"></div>
+    <div class="col-lg-4 box box5 border-0 position-relative"></div>
+    <div class="col-lg-3 box box6 border-0 position-relative">
+        
+    </div>
+    <div class="col-lg-3 box box7 border-0 position-relative d-flex justify-content-center">
+        <div class="box-text"></div>
+    </div>
+</div>
+</div>
+<div class="container-fluid last-sec position-relative">
+<div class="row d-flex">
+    <div class="col-lg-3 col-md-12 d-flex position-relative">
+        <div class="footer-text position-absolute d-flex justify-content-center align-items-center last-text">
+            <div class="col mx-5 ml-5">
+                <h1 class="display-3">讓世界</h1>
+                <h1 class="display-3">暫停一下</h1>
+                <button onclick="" type="button" class="btn btn-dark btn-lg mt-5" style="letter-spacing: 0.5rem" data-toggle="modal" data-target="#exampleModalCenter">開始冥想</button>
+            </div>
+        
+        </div>
+        
+    </div>
+    <div class="col-lg-9 d-flex justify-content-center footer-pic ">               
+    </div>
+</div>
+</div>
 
 <!----------Footer---------->
-    <div class="container-fluid footer-copyright">
-        <div class="row d-flex justify-content-center">
-            <p class="my-2">© 2020 Rachel Liaw</p>
-        </div>
-    </div>
+<div class="container-fluid footer-copyright">
+<div class="row d-flex justify-content-between">
+    <p class="my-2">Sound from Zapsplat.com</p>
+    <p class="my-2">© 2020 Rachel Liaw</p>
+</div>
+</div>
 
     <!-- Bootstrap Javascript-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -229,40 +298,173 @@
 
 
     <script>
+
+//------------Choose Time----------------------------------//
+const clockbox = document.getElementsByClassName("clockdiv")[0];
+const start_btn = document.getElementsByClassName("start-btn")[0];
+const btn_wrapper = document.getElementsByClassName("btn-wrapper")[0];
+var close = document.getElementsByClassName('close')[0];
+
+
+//設定初始style
+start_btn.classList.add('d-flex');
+btn_wrapper.classList.add("d-flex");
+
+
+clockbox.classList.remove("d-flex");
+clockbox.style['display']='none';
+
+
 // <!-- Play audio -->
-    var x = document.getElementById("myAudio"); 
-    function togglePlay() { 
-    return myAudio.paused ? myAudio.play() : myAudio.pause();}; 
+var myAudio= document.getElementById("myAudio"); 
+// function togglePlay() { 
+//     return myAudio.paused ? myAudio.play() : myAudio.pause();}; 
 
-    $('.play-ani').click(function(){
-        console.log('play');
-        $('.wave').toggleClass('flow-1');
-    })
+//button點擊呼叫
+function processFormData(){
+
+    var alert = document.getElementsByClassName("alert")[0]; 
+    alert.innerHTML='';
+
+    const time = choose_time.value;
+
+    if(!time){
+        alert.innerHTML='請選擇時間';
 
 
+    }
 
-    // jQ////
+    else{
+
+
+    
+    clockbox.classList.add('d-flex');
+    start_btn.classList.remove("d-flex");
+    start_btn.style['display']='none';
+    btn_wrapper.classList.remove("d-flex");
+    btn_wrapper.style['display']='none';
+    
+    
+    console.log("time:"+time);
+
+    //設定deadline
+    
+    const deadline = new Date(Date.parse(new Date()) + time * 60 * 1000); 
+    
+    //呼叫initialize
+    initializeClock('clockdiv', deadline);
+    myAudio.play();
+}
+
+
+};
+
+//Count Down//
+    function getTimeRemaining(endtime) { 
+        const total = Date.parse(endtime) - Date.parse(new Date());
+        const seconds = Math.floor((total / 1000) % 60);
+        const minutes = Math.floor((total / 1000 / 60) % 60); 
+       
+        return { 
+            total, minutes, seconds 
+            }; 
+    } 
+    
+    function initializeClock(id, endtime) {
+     const clock = document.getElementById(id); 
+   
+     const minutesSpan = clock.querySelector('.min'); 
+     const secondsSpan = clock.querySelector('.sec'); 
+     
+     
+     function updateClock() {
+          const t = getTimeRemaining(endtime); 
+          minutesSpan.innerHTML = ('0' + t.minutes).slice(-2); 
+          secondsSpan.innerHTML = ('0' + t.seconds).slice(-2); 
+          console.log('remain:'+t.total);
+          
+          if (t.total <= 0) { clearInterval(timeinterval); myAudio.pause();} 
+          
+          }
+
+        updateClock(); 
+    
+        const timeinterval = setInterval(updateClock, 1000); 
+
+        //點擊叉叉
+        close.addEventListener("click",function(){
+            clearInterval(timeinterval);  
+
+        });
+       
+    } 
+
+// click close and stop music & timer
+
+
+close.addEventListener("click",function(){
+    myAudio.pause();
+    
+setTimeout(function(){start_btn.classList.add('d-flex'),
+    btn_wrapper.classList.add('d-flex'),
+    clockbox.classList.remove("d-flex"),
+    clockbox.style['display']='none',
+    console.log('看我有沒有三秒後出現')},
+    
+     1000);
+    
+     
+    //  $('.wave').toggleClass('flow-1');
+
+});
+
 // Placs
 
     $('.dots-wrap li').first().css('background','rgba(213, 212, 158, 1)').siblings().css('background','rgba(7, 71, 191, 1)');
 
     let index =0;
 
-    let distance = $('.card-2').position().left;
+    // let distance = $('.card-2').position().left;
 
 
     $('.dots-wrap li, .card-wrap a').hover(function(){
         let index=$(this).index();
         let move = - index * 0.6* distance;
+        let windowWidth = $(window).width();
         
         console.log(move);
         $('.dots-wrap li').eq(index).css('background','rgba(213, 212, 158, 1)').siblings().css('background','rgba(7, 71, 191, 1)');
         $('.card-wrap a').eq(index).css('transform','scale(1.1)');
         $('.card-wrap a').eq(index).css('opacity','1');
 
-        if(index==4){
-            $('.card-wrap').css('left',move-200);
+        if (windowWidth <= 768) {
+            $('.card-wrap').css('left',move);
         }
+    
+        else{
+            $('.card-wrap').css('left',move);
+        }
+
+    })
+
+    $('.dots-wrap li, .card-wrap a').click(function(){
+        let index=$(this).index();
+        let move = - index * 0.6* distance;
+        let windowWidth = $(window).width();
+        
+        console.log(move);
+        $('.dots-wrap li').eq(index).css('background','rgba(213, 212, 158, 1)').siblings().css('background','rgba(7, 71, 191, 1)');
+        $('.card-wrap a').eq(index).css('transform','scale(1.1)');
+        $('.card-wrap a').eq(index).css('opacity','1');
+
+        if (index == 4) {
+            $('.card-wrap').css('left',move/0.6);
+        }
+
+        else if (index == 3) {
+            $('.card-wrap').css('left',move/0.6);
+        }
+    
         else{
             $('.card-wrap').css('left',move);
         }
@@ -290,10 +492,10 @@
         }
 
         else if(boxnum==1){
-        $('.story div').eq(boxnum).append('<h2 class="box-text">沒有人能夠真的傷害你</h2>')}
+        $('.story div').eq(boxnum).append('<h2 class="box-text">思緒變得更清晰</h2>')}
 
         else if(boxnum==2){
-        $('.story div').eq(boxnum).html('<h3 class="box-text">轉瞬即逝</h3>');}
+        $('.story div').eq(boxnum).html('<h3 class="box-text">瞬間開闊了</h3>');}
 
         else if(boxnum==3){
         $('.story div').eq(boxnum).html('<h2 class="box-text">找一個安靜的角落</h2>');}
@@ -314,12 +516,7 @@
         $('.story div .box-text').remove();
     })
     
-    // $('.story div').hover(function(){
-    //     let boxnum = $(this).index();
-    //     console.log(boxnum);
-    //     $('.story div').eq(boxnum).find('.box-text').html('<span class="box-text">在呼吸之後，世界好像慢下來了</span>');
 
-    // })
 
 
 
