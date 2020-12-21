@@ -507,6 +507,11 @@ li {
 
 /* ---HowToStory----- */
 
+.blank{
+    width: 100%;
+    height: 100px;
+}
+
 .how-to {
     background: linear-gradient(180deg, rgba(213, 212, 158, 1) 0%, rgba(7, 71, 191, 1) 30%, rgba(1, 7, 102, 1) 50%, rgba(0, 0, 0, 1) 100%);
 }
@@ -748,6 +753,11 @@ li {
       
         top: 50%;
       
+    }
+
+    .blank{
+        width: 100%;
+        height: 150px;
     }
 
 
